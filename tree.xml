@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>dizmo Data Tree V1.2</title>
+    <dateModified>Mon, 14 May 2018 08:06:57 +0000</dateModified>
+    <ownerName>dizmo</ownerName>
+  </head>
+  <body>
+    <outline text="viewer">
+      <outline type="note" isComment="true" text="The subtree of the «/viewer» node provides all data about the instance of dizmoViewer currently running and allows dizmos to store that should be made available to other dizmos running in this dizmoViewer instance (private subtree) as well as providing access to information shared with the world (public subtree). &#13;&#10;&#13;&#10;Access to this information is provided by the access methods of the viewer object:&#13;&#10;`viewer.getAttribute(&quot;&lt;path&gt;&quot;);`  &#13;&#10;`viewer.setAttribute(&quot;&lt;path&gt;&quot;);`  &#13;&#10;`viewer.privateStorage.getProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`viewer.privateStorage.setProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`viewer.publicStorage.getProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`viewer.publicStorage.setProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`&#13;&#10;&#13;&#10;For more information have a look at the chapters about «Data Tree» and «Persistence» in the developers documentation." user="dizmo" _user_id="76697" note_id="870575" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+      <outline text="attributes">
+        <outline type="note" isComment="true" text="The subtree of the «/viewer/attributes» node provides all kinds of information about the instance of dizmoViewer currently running. Access this information using `viewer.getAttribute(&quot;[info-path]&quot;);`" user="dizmo" _user_id="76697" note_id="870576" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+        <outline text="audio">
+          <outline type="note" isComment="true" text="Please find the details about audio recording at &lt;a href=&quot;http://test.dizmo.com/docs/topics/audio&quot;&gt;http://test.dizmo.com/docs/topics/audio&lt;/a&gt;&#13;&#10;" user="dizmo" _user_id="76697" note_id="1005899" dateModified="Fri, 03 Feb 2017 09:48:37 +0000"/>
+          <outline text="codec">
+            <outline type="note" isComment="true" text="Codec of the audio stream. This can only be set when recording is stopped.  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** String&#13;&#10;**default** audio/pcm&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870582" dateModified="Fri, 03 Feb 2017 09:45:51 +0000"/>
+          </outline>
+          <outline text="recording">
+            <outline type="note" isComment="true" text="Information from the audio recorder, if any recording is active&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** Boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870578" dateModified="Fri, 03 Feb 2017 09:47:56 +0000"/>
+          </outline>
+          <outline text="sampleRate">
+            <outline type="note" isComment="true" text="Sample rate of the audio stream (values per second). This can only be set, when recording is stopped  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**default** 8000&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870581" dateModified="Fri, 03 Feb 2017 09:48:11 +0000"/>
+          </outline>
+          <outline text="sampleSize">
+            <outline type="note" isComment="true" text="Sample size of the audio data stream in bits. This can only be set, when the recording is stopped.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 8, 16&#13;&#10;**default** 16&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870580" dateModified="Fri, 03 Feb 2017 10:38:30 +0000"/>
+          </outline>
+          <outline text="stream">
+            <outline type="note" isComment="true" text="Provides base64 encoded audio data as a string. To access the audio information subscribe to this data tree node&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** String  &#13;&#10;**default** &quot;0&quot;   &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870579" dateModified="Fri, 03 Feb 2017 10:37:31 +0000"/>
+          </outline>
+          <outline text="supported">
+            <outline type="note" isComment="true" text="Returns all supported settings for the currently selected audio recording device as a json&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** String  &#13;&#10;**default** &quot;{\&lt;devicename\&gt;:{&quot;channels&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;],&quot;codecs&quot;:[&quot;audio/pcm&quot;],&quot;samplerates&quot;:[&quot;8000&quot;,&quot;44100&quot;,&quot;48000&quot;],&quot;samplesizes&quot;:[&quot;8&quot;,&quot;16&quot;,&quot;24&quot;]}}&quot; &#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="1099367" dateModified="Fri, 04 Aug 2017 11:57:04 +0000"/>
+          </outline>
+        </outline>
+        <outline text="childDizmos">
+          <outline type="note" isComment="true" text="An array of dizmoIDs of all dizmos located on the viewer surface directly&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** Array of Strings&#13;&#10;**range** (hexstring)&#13;&#10;**example** [&quot;h3753bff70b74d672524fa570f2fa2567&quot;, &quot;hd4413a56a4c5c72f4ad24528757f9850&quot;]&#13;&#10;**prev-path** `/dizmos`&#13;&#10;**subscribable** true&#13;&#10;**default** []" user="dizmo" _user_id="76697" note_id="870577" dateModified="Fri, 03 Feb 2017 09:44:16 +0000"/>
+        </outline>
+        <outline text="geometry">
+          <outline type="note" isComment="true" text="This subtree of the «/viewer/attributes» node provides information about geometry of the surface provided by dizmoViewer. Access these items using `viewer.getAttribute(&quot;geometry/[info]&quot;);`" user="dizmo" _user_id="76697" note_id="870583" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+          <outline text="angle">
+            <outline type="note" isComment="true" text="The rotation at which the surface of dizmoViewer is currently displayed  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** number&#13;&#10;**range** 0..360&#13;&#10;**default** 0&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870584" dateModified="Tue, 07 Jun 2016 21:46:52 +0000"/>
+          </outline>
+          <outline text="height">
+            <outline type="note" isComment="true" text="The height of the rectangle of the dizmoViewer surface currently visible.&#13;&#10;&#13;&#10;In order to get the height of the window in which dizmoViewer renders its content in pixels, just multiply this value with the «zoom» factor. If the view is set to «full screen» this corresponds to the height of the screen.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870585" dateModified="Wed, 05 Apr 2017 07:40:54 +0000"/>
+          </outline>
+          <outline text="width">
+            <outline type="note" isComment="true" text="The width of the rectangle of the dizmoViewer surface currently visible.  In order to get the width of the window in which dizmoViewer renders its content in pixels, just multiply this value with the «zoom» factor. If the view is set to «full screen» this corresponds to the width of the screen.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870586" dateModified="Tue, 07 Jun 2016 21:49:08 +0000"/>
+          </outline>
+          <outline text="windowHeight">
+            <outline type="note" isComment="true" text="The current height of the dizmo application window&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**available since** 1.1r1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870590" dateModified="Tue, 13 Sep 2016 18:12:27 +0000"/>
+          </outline>
+          <outline text="windowWidth">
+            <outline type="note" isComment="true" text="The current width of the dizmo application window&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**available since** 1.1r1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870591" dateModified="Tue, 13 Sep 2016 18:12:34 +0000"/>
+          </outline>
+          <outline text="~~workspaceHeight~~">
+            <outline type="note" isComment="true" text="Deprecated, has been moved to «/viewer/attributes/globalSettings/Viewer_WorkspaceHeight»&#13;&#10;~~The current height of the workspace~~&#13;&#10;&#13;&#10;~~**write** false~~&#13;&#10;~~**type** number~~&#13;&#10;~~**available since** 1.2rc1~~&#13;&#10;~~**subscribable** false~~" user="dizmo" _user_id="76697" note_id="1015380" dateModified="Thu, 27 Apr 2017 11:10:23 +0000"/>
+          </outline>
+          <outline text="~~workspaceWidth~~">
+            <outline type="note" isComment="true" text="Deprecated, has been moved to «/viewer/attributes/globalSettings/Viewer_WorkspaceWidth»&#13;&#10;~~The current width of the workspace~~&#13;&#10;&#13;&#10;~~**write** false~~&#13;&#10;~~**type** number~~&#13;&#10;~~**available since** 1.2rc1~~&#13;&#10;~~**subscribable** false~~" user="dizmo" _user_id="76697" note_id="1015381" dateModified="Thu, 27 Apr 2017 11:11:01 +0000"/>
+          </outline>
+          <outline text="x">
+            <outline type="note" isComment="true" text="The x coordinate of the center of the rectangle of the dizmoViewer surface currently being displayed  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** number&#13;&#10;**range** -3000..3000&#13;&#10;**default** 0&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870587" dateModified="Tue, 07 Jun 2016 21:49:31 +0000"/>
+          </outline>
+          <outline text="y">
+            <outline type="note" isComment="true" text="The y coordinate of the center of the rectangle of the dizmoViewer surface currently being displayed  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** number&#13;&#10;**range** -3000..3000&#13;&#10;**default** 0&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870588" dateModified="Tue, 07 Jun 2016 21:49:42 +0000"/>
+          </outline>
+          <outline text="zoom">
+            <outline type="note" isComment="true" text="The zoom level used to render the currently visible part of the dizmoViewer surface&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** number&#13;&#10;**range** 0.1..10&#13;&#10;**default** 1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870589" dateModified="Tue, 07 Jun 2016 21:49:55 +0000"/>
+          </outline>
+        </outline>
+        <outline text="globalSettings">
+          <outline type="note" isComment="true" text="This subtree of the «/viewer/attributes» node provides access to all the values read from the basic settings file of dizmoViewer (GlobalSettings.xml). Access them using `viewer.getAttribute(&quot;globalSettings/[setting]&quot;);` For more information about the items available in this subtree have a look at the documentation of the GlobalSettings.xml file. Please be aware, that some values are not available in any case. In example Store_HostUrl and Synchro_HostUrl are only available, when they are set in the GlobalSettings.xml by the user. &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870592" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+          <outline text="Store_HostUrl">
+            <outline type="note" isComment="true" text="The URL of the server to be used to get new or updated dizmos.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**default** &quot;store-api.dizmo.com&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870593" dateModified="Tue, 07 Jun 2016 22:06:27 +0000"/>
+          </outline>
+          <outline text="Synchro_HostUrl">
+            <outline type="note" isComment="true" text="The URL of the server to be used to save and laod dizmo setups&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**default** &quot;synchro-api.dizmo.com&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870594" dateModified="Tue, 07 Jun 2016 22:06:43 +0000"/>
+          </outline>
+          <outline text="...">
+            <outline type="note" isComment="true" text="There a re many more settings items available in this subtree. For more information have a look at the documentation of the GlobalSettings.xml file." user="dizmo" _user_id="76697" note_id="870595" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+          </outline>
+        </outline>
+        <outline text="product">
+          <outline type="note" isComment="true" text="This subtree of the «/viewer/attributes» node provides all kinds of information about the instance of dizmoViewer currently running. Access them using `viewer.getAttribute(&quot;product/[info]&quot;);`" user="dizmo" _user_id="76697" note_id="870607" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+          <outline text="compileDate">
+            <outline type="note" isComment="true" text="The date and time when the instance of dizmoViewer running was compiled in the format dd.mm.yy hh.mm.  &#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;18.12.14 14:54&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870609" dateModified="Tue, 07 Jun 2016 21:51:37 +0000"/>
+          </outline>
+          <outline text="installedDizmoJsVersions">
+            <outline type="note" isComment="true" text="An array proving the versions of the dizmoJS library installed on the instance of dizmoViewer running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;1.0&quot;, &quot;1.1&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870610" dateModified="Tue, 07 Jun 2016 21:51:57 +0000"/>
+          </outline>
+          <outline text="installedElementsVersions">
+            <outline type="note" isComment="true" text="An array proving the versions of the dizmoElements library installed on the instance of dizmoViewer running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;1.0&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870611" dateModified="Tue, 07 Jun 2016 21:52:34 +0000"/>
+          </outline>
+          <outline text="installedHelperVersions">
+            <outline type="note" isComment="true" text="An array proving the versions of the dizmoHelper library installed on the instance of dizmoViewer running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;1.0&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870612" dateModified="Tue, 07 Jun 2016 21:52:48 +0000"/>
+          </outline>
+          <outline text="installedThemes">
+            <outline type="note" isComment="true" text="An array proving the visual themes installed on the instance of dizmoViewer running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;Default&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870613" dateModified="Tue, 07 Jun 2016 21:53:00 +0000"/>
+          </outline>
+          <outline text="libraries">
+            <outline type="note" isComment="true" text="A string proving the Qt and rendering library versions used in the instance of dizmoViewer running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;'Qt 5.3.1' 'WebKit 538.1'&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870614" dateModified="Tue, 07 Jun 2016 21:53:21 +0000"/>
+          </outline>
+          <outline text="licensedTo">
+            <outline type="note" isComment="true" text="The name of the person or organization the instance of dizmoViewer running was licensed to&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**example** &quot;John Doe&quot;&#13;&#10;**prev-path** /viewer/licenseTo&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870615" dateModified="Tue, 07 Jun 2016 21:53:40 +0000"/>
+          </outline>
+          <outline text="licenseKey">
+            <outline type="note" isComment="true" text="Let the dizmo set a serial number as license key for the current running dizmo space.  &#13;&#10;  &#13;&#10;**write** true&#13;&#10;**read** false&#13;&#10;**type** string&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870608" dateModified="Tue, 07 Jun 2016 21:51:18 +0000"/>
+          </outline>
+          <outline text="licenseString">
+            <outline type="note" isComment="true" text="The type of license under which the current instance of dizmoViewer is running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870616" dateModified="Tue, 07 Jun 2016 21:53:56 +0000"/>
+          </outline>
+          <outline text="treeVersion">
+            <outline type="note" isComment="true" text="The version of the storage tree the instance of dizmoViewer running provides.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.1&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870617" dateModified="Tue, 07 Jun 2016 21:54:19 +0000"/>
+          </outline>
+          <outline text="version">
+            <outline type="note" isComment="true" text="The version string of the instance of dizmoViewer running in a human readable format&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.0r2 Build 760&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870618" dateModified="Tue, 07 Jun 2016 21:54:32 +0000"/>
+          </outline>
+          <outline text="versionString">
+            <outline type="note" isComment="true" text="The version of the instance of dizmoViewer running as a machine readable string composed of four integers separated by dots.&#13;&#10;&#13;&#10; These numbers indicate major version, minor version, development state (100: alpha, 200: beta, 300: release candidate, 400: release) and subversion plus the build number.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.0.402.760&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870619" dateModified="Tue, 07 Jun 2016 21:54:45 +0000"/>
+          </outline>
+        </outline>
+        <outline text="settings">
+          <outline type="note" isComment="true" text="This subtree of the «/viewer/attributes» node provides all kinds of parameters about the current configuration of dizmoViewer. Access them using `viewer.getAttribute(&quot;settings/[setting]&quot;);`" user="dizmo" _user_id="76697" note_id="870620" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+          <outline text="animationDuration">
+            <outline type="note" isComment="true" text="The duration in milliseconds for the transition animation to turn a dizmo from its front to its back and vice versa.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 50..3000&#13;&#10;**default** 500&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870621" dateModified="Fri, 03 Feb 2017 09:36:05 +0000"/>
+          </outline>
+          <outline text="backgroundColor">
+            <outline type="note" isComment="true" text="The webcolor of the dizmoViewer surface.&#13;&#10;Up to API V1.1 and version 1.1 of dizmoViewer the order of the values was ARGB (#ffafc809 as a default)&#13;&#10;&#13;&#10;&lt;a href=&quot;http://test.dizmo.com/docs/topics/color&quot;&gt;Details&lt;/a&gt;&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** colorstring&#13;&#10;**range** color&#13;&#10;**default** &quot;#e6e6e6ff&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870622" dateModified="Mon, 18 Jul 2016 09:10:43 +0000"/>
+          </outline>
+          <outline text="backgroundImage">
+            <outline type="note" isComment="true" text="The URL of the current background image used to draw the surface of dizmoViewer. The image will be tiled if its size is smaller than the size of the surface&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**range** URL&#13;&#10;**default** &quot;&quot;&#13;&#10;**example** &quot;file:///Users/jdoe/Pictures/myBackground.png&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870623" dateModified="Tue, 07 Jun 2016 21:56:19 +0000"/>
+          </outline>
+          <outline text="displayMode">
+            <outline type="note" isComment="true" text="A string indicating the display mode currently set for dizmoViewer&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**range** &quot;edit&quot;, &quot;development&quot;, &quot;presentation&quot;  &#13;&#10;**default** &quot;edit&quot;&#13;&#10;**example** &quot;development&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870625" dateModified="Tue, 07 Jun 2016 22:26:40 +0000"/>
+          </outline>
+          <outline text="fullScreen">
+            <outline type="note" isComment="true" text="A boolean indicating wether or not dizmoViewer is shown full screen or in a window&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**subscribable** true&#13;&#10;**default** false" user="dizmo" _user_id="76697" note_id="870627" dateModified="Tue, 07 Jun 2016 23:30:03 +0000"/>
+          </outline>
+          <outline text="language">
+            <outline type="note" isComment="true" text="The two character ISO 639-1 code of language currently selected&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**example** &quot;en&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870628" dateModified="Tue, 07 Jun 2016 21:58:23 +0000"/>
+          </outline>
+          <outline text="linkAcceptMode">
+            <outline type="note" isComment="true" text="The mode for accepting dizmoLive connections. If set to &quot;askuser&quot; dizmoViewer will ask the user before accepting an incoming dizmoLive connection. If set to &quot;silentlive&quot; dizmoViewer will accept any incoming dizmoLive connection immediately. If set to &quot;donotdisturb&quot; dizmoViewer will decline any incoming connections immediately.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**range** &quot;askuser&quot;, &quot;silentlive&quot;, &quot;donotdisturb&quot;  &#13;&#10;**default** &quot;askuser&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870629" dateModified="Tue, 07 Jun 2016 22:26:33 +0000"/>
+          </outline>
+          <outline text="mimeTypes">
+            <outline text="[mimeType]">
+              <outline type="note" isComment="true" text="This is the MIME type for which the available bundleIds are specified. This table is maintained by dizmoViewer based on information coming from Info.plists" user="dizmo" _user_id="76697" note_id="870633" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+              <outline text="defaultBundleId">
+                <outline type="note" isComment="true" text="The bundleId of the dizmo to be used by default for this kind of MIME type&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** bundleId&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870634" dateModified="Tue, 07 Jun 2016 22:00:13 +0000"/>
+              </outline>
+              <outline text="bundleIDs">
+                <outline type="note" isComment="true" text="This is an unordered array of bundleIds of dizmos that can handle a specific MIME type. This list is maintained by dizmoViewer based on Information coming from dizmos Info.plists.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** Array of bundleIds &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870635" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+              </outline>
+            </outline>
+          </outline>
+          <outline text="showGuides">
+            <outline type="note" isComment="true" text="A boolean indicating wether or not dizmoViewer does supply the supporting guiding lines to align dizmos&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**subscribable** true&#13;&#10;**default** true" user="dizmo" _user_id="76697" note_id="870632" dateModified="Tue, 07 Jun 2016 23:31:26 +0000"/>
+          </outline>
+          <outline text="themeId">
+            <outline type="note" isComment="true" text="The Id of of the theme currently in use&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**default** &quot;Default&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870624" dateModified="Tue, 07 Jun 2016 21:56:46 +0000"/>
+          </outline>
+          <outline text="uiScaling">
+            <outline type="note" isComment="true" text="A factor by which the viewer should scale its UI elements (menus, buttons, dialogs).&#13;&#10;&#13;&#10;http://test.dizmo.com/docs/topics/uiscaling&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** number&#13;&#10;**range** 0.5..2&#13;&#10;**default** 1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870626" dateModified="Wed, 13 Jul 2016 13:24:04 +0000"/>
+          </outline>
+          <outline text="userName">
+            <outline type="note" isComment="true" text="The username provided when logging in to dizmoViewer&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**default** &quot;default&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870630" dateModified="Tue, 07 Jun 2016 21:59:02 +0000"/>
+          </outline>
+          <outline text="~~setupID~~">
+            <outline type="note" isComment="true" text="**removed after** 1.1r2" user="dizmo" _user_id="76697" note_id="870631" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+          </outline>
+        </outline>
+        <outline text="system">
+          <outline type="note" isComment="true" text="This subtree of the «/viewer/attributes» node provides all kinds of information about the platform on which dizmoViewer is currently running. Access them using `viewer.getAttribute(&quot;system/[info]&quot;);`" user="dizmo" _user_id="76697" note_id="870636" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+          <outline text="closestCity">
+            <outline type="note" isComment="true" text="The name of the city closest to the location of the device on which dizmoViewer is running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;Zuerich&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870637" dateModified="Tue, 07 Jun 2016 22:00:28 +0000"/>
+          </outline>
+          <outline text="dizmoAllocatedMemory">
+            <outline type="note" isComment="true" text="The number of bytes of main physical memory currently allocated to dizmoViewer&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**example** 275415040&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870638" dateModified="Tue, 07 Jun 2016 22:00:43 +0000"/>
+          </outline>
+          <outline text="dizmoUsedMemory">
+            <outline type="note" isComment="true" text="The number of bytes of main physical memory currently used by dizmoViewer&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**example** 275341312&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870639" dateModified="Tue, 07 Jun 2016 22:01:06 +0000"/>
+          </outline>
+          <outline text="freeSystemMemory">
+            <outline type="note" isComment="true" text="The number of bytes of main physical memory available for use on the underlying hardware (real or virtual)&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**example** 804442112&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870640" dateModified="Tue, 07 Jun 2016 22:01:15 +0000"/>
+          </outline>
+          <outline text="geoLocation">
+            <outline text="latitude">
+              <outline type="note" isComment="true" text="The latitude of the current location of the device on which dizmoViewer is running (-90 indicating the south pole, 90 indicating the north pole)&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**example** 47.367347&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870642" dateModified="Tue, 07 Jun 2016 22:01:40 +0000"/>
+            </outline>
+            <outline text="longitude">
+              <outline type="note" isComment="true" text="The longitude of the current location of the device on which dizmoViewer is running (&gt;0 indicating east of Greenwich, &gt;0 west of Greenwich)&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**example** 8.5500025&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870643" dateModified="Tue, 07 Jun 2016 22:01:55 +0000"/>
+            </outline>
+          </outline>
+          <outline text="ipv4address">
+            <outline type="note" isComment="true" text="The IPv4 address of the device on which this instance of dizmoViewer is running in Dot-decimal notation. Cleared from self loops, peer2peer and inactive connections.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;192.168.0.3&quot;]&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870650" dateModified="Tue, 07 Jun 2016 22:04:30 +0000"/>
+          </outline>
+          <outline text="ipv6address">
+            <outline type="note" isComment="true" text="The IPv6 address of the device on which this instance of dizmoViewer is running in Colon-hex notation. Cleared from self loops, peer2peer and inactive connections.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;fe80::344d:6e34:bc92:4abf%10&quot;, &quot;fe80::64d5:792:ffeb:bf3f%23&quot;, &quot;fe80::819e:9c33:87d3:4a%24&quot;] &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870651" dateModified="Tue, 07 Jun 2016 22:04:42 +0000"/>
+          </outline>
+          <outline text="lastBackupTime">
+            <outline type="note" isComment="true" text="The time of the last workspace backup stored for the current user in seconds since epoch&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** Integer&#13;&#10;**example** 1486113066&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="1005886" dateModified="Fri, 03 Feb 2017 09:12:13 +0000"/>
+          </outline>
+          <outline text="logicalDpi">
+            <outline type="note" isComment="true" text="Provides the dpi of the screen currently set in the OS. This is not the same as the actual resolution of the screen hardware. This is used to autoscale all UI elements drawn by the viewer (menus, buttons, dialogs). The automatic scaling factor to draw UI elements is calculated as logicalDpi / 96.&#13;&#10;&#13;&#10;http://test.dizmo.com/docs/topics/uiscaling&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870641" dateModified="Wed, 13 Jul 2016 13:24:22 +0000"/>
+          </outline>
+          <outline text="online">
+            <outline type="note" isComment="true" text="Indicates if the underlying hard- and software has a connection to the Internet. true if the connection is available and working. This is updated whenever the value is requested.&#13;&#10;&#13;&#10;&lt;a href=&quot;http://test.dizmo.com/docs/topics/online&quot;&gt;Detail&lt;/a&gt;&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870644" dateModified="Mon, 18 Jul 2016 09:15:45 +0000"/>
+          </outline>
+          <outline text="openGl">
+            <outline type="note" isComment="true" text="Indicates if the underlying hard- and software support rendering based on openGL&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870645" dateModified="Tue, 07 Jun 2016 22:02:19 +0000"/>
+          </outline>
+          <outline text="openGlVersion">
+            <outline type="note" isComment="true" text="Provides the version of openGL (if available) running on the underlying hard- and software&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;3.2&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870646" dateModified="Tue, 07 Jun 2016 22:02:29 +0000"/>
+          </outline>
+          <outline text="operatingSystem">
+            <outline type="note" isComment="true" text="A string describing the type and version of the operating system on which dizmoViewer is currently running&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**examples** &quot;Mac OS X 10.8&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870647" dateModified="Tue, 07 Jun 2016 22:02:47 +0000"/>
+          </outline>
+          <outline text="systemArchitecture">
+            <outline type="note" isComment="true" text="The architecture for which the running version of dizmoViewer has been compiled for&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**examples** &quot;macosx&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870648" dateModified="Tue, 07 Jun 2016 22:03:04 +0000"/>
+          </outline>
+          <outline text="systemMemory">
+            <outline type="note" isComment="true" text="The number of bytes of main physical memory installed in the underlying hardware (real or virtual)&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**example** 8589934592&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870649" dateModified="Tue, 07 Jun 2016 22:03:21 +0000"/>
+          </outline>
+        </outline>
+        <outline text="~~liveConnections~~">
+          <outline type="note" isComment="true" text="~~Subtree to get data about available live hosts and connections~~ Deprecated, has been moved to «remoteHosts»" user="dizmo" _user_id="76697" note_id="870596" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+          <outline text="~~[remoteHostId]~~">
+            <outline type="note" isComment="true" text="~~A unique identifier like the IP address, the reverse lookup name or the host name of another dizmoViewer instance that is connected or can be connected to the local dizmoViewer instance. Don't make any assumptions about the format of this Id as it might change in the future.~~&#13;&#10;&#13;&#10;Depreciated, has been moved to «remoteHosts»&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** Any string  &#13;&#10;**example**   &quot;dev001.example.com-1&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870597" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            <outline text="~~dizmos~~">
+              <outline type="note" isComment="true" text="An array of dizmoIDs of the dizmos currently transmitting from and to the other dizmoViewer if there is currently is an open connection.&#13;&#10;&#13;&#10;&lt;b&gt;write&lt;/b&gt; false  &#13;&#10;&lt;b&gt;type&lt;/b&gt; Array of Strings  &#13;&#10;&lt;b&gt;range&lt;/b&gt; (hexstring)  &#13;&#10;&lt;b&gt;example&lt;/b&gt; [&quot;h3753bff70b74d672524fa570f2fa2567&quot;, &quot;hd4413a56a4c5c72f4ad24528757f9850&quot;]  &#13;&#10;**prev-path** /viewer/openLiveConnections/dizmos &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870605" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~hostName~~">
+              <outline type="note" isComment="true" text="The host name of the other dizmoViewer. This string is usually grabbed from the operating system.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** (host String)  &#13;&#10;**example** &quot;local.otherComputer&quot;  &#13;&#10;**prev-path** /viewer/openLiveConnections/hostName &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870606" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~ipv4address~~">
+              <outline type="note" isComment="true" text="The IPv4 address of the device on which the remote instance of dizmoViewer is running in Dot-decimal notation.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Dot-decimal)&#13;&#10;**example** [&quot;192.168.0.3&quot;, &quot;192.168.57.1&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870601" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~ipv4livehub~~">
+              <outline type="note" isComment="true" text="This field provides the IPv4 address of the gateway that is or has to be used to connect to the remote host. If the remote dizmoViewer instance is available using a direct LAN connection this is set to &quot;127.0.0.1&quot; (localhost).&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Dot-decimal)&#13;&#10;**example** [&quot;127.0.0.1&quot;, &quot;198.51.100.1&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870600" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~ipv6address~~">
+              <outline type="note" isComment="true" text="The IPv6 address of the device on which the remote instance of dizmoViewer is running in Colon-hex notation.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Colon-hex)&#13;&#10;**example** [&quot;2001:0db8:85a3:08d3:1319:8a2e:0370:1234/64&quot;, &quot;2001:0db8:85a3:08d3:1319:8a2e:0370:5342/64&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870603" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~ipv6livehub~~">
+              <outline type="note" isComment="true" text="This field provides the IPv6 address of the dizmoLive hub that is or has to be used to connect to the remote host. If the remote dizmoViewer instance is available using a direct LAN connection this is set to &quot;::1&quot; (localhost).&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Colon-hex)&#13;&#10;**example** [&quot;::1&quot;, &quot;2001:0db8:85a3:08d3:1319:8a2e:0370:7347/64&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870602" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~status~~">
+              <outline type="note" isComment="true" text="This item provides the status of the connection. The states provided should be self explaining.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** [&quot;closed&quot;, &quot;connecting&quot;, &quot;open&quot;, &quot;closing&quot;]  &#13;&#10;**example**   &quot;connecting&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870598" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~time~~">
+              <outline type="note" isComment="true" text="The time of the latest connection status change.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** unsigned int  &#13;&#10;**range** (0 - UINT_MAX)  &#13;&#10;**example** 1234567890&#13;&#10;**prev-path** /viewer/openLiveConnections/time &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870599" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+            <outline text="~~userName~~">
+              <outline type="note" isComment="true" text="Name of the user that has signed in on the remote dizmoViewer.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** Any string  &#13;&#10;**example**   &quot;kkratzenstein&quot;&#13;&#10;**prev-path** /viewer/openLiveConnections/userName &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870604" dateModified="Sun, 10 Apr 2016 11:25:17 +0000"/>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="~~setup~~">
+          <outline type="note" isComment="true" text="~~This subtree of the «/viewer/attributes» node provides information about the setup that has last been stored / loaded. Access them using `viewer.getAttribute(&quot;setup/[info]&quot;);`~~&#13;&#10;&#13;&#10;~~**available since** 1.1r3~~ &#13;&#10;~~**subscribable** true~~&#13;&#10;&#13;&#10;Deprecated, setups are now tied to Pads" user="dizmo" _user_id="76697" note_id="870652" dateModified="Fri, 03 Feb 2017 09:04:58 +0000"/>
+          <outline text="~~id~~">
+            <outline type="note" isComment="true" text="The id of the current setup. This will change after «Load», «Save», «Clear» and «Rename» Empty string if cleared.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**default** &quot;&quot;&#13;&#10;**available since** 1.1r3&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870653" dateModified="Tue, 07 Jun 2016 22:04:59 +0000"/>
+          </outline>
+          <outline text="~~name~~">
+            <outline type="note" isComment="true" text="The name of the setup given to it by its owner&#13;&#10;The dizmoID of the person who created and therefore owns a setup. Ownership will not be changed if someone else with the right to write back to a shared setup has saved an updated version.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**default** &quot;&quot;&#13;&#10;**available since** 1.1r3&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870654" dateModified="Tue, 07 Jun 2016 22:05:12 +0000"/>
+          </outline>
+          <outline text="~~owner~~">
+            <outline type="note" isComment="true" text="~~The dizmoID of the person who created and therefore owns a setup. Ownership will not be changed if someone else with the right to write back to a shared setup has saved an updated version.~~&#13;&#10;&#13;&#10;~~**write** false&#13;&#10;**type** string&#13;&#10;**default** &quot;&quot;&#13;&#10;**available since** 1.1r3&#13;&#10;**subscribable** true~~&#13;&#10;&#13;&#10;Deprecated, setups are now tied to Pads" user="dizmo" _user_id="76697" note_id="870655" dateModified="Fri, 03 Feb 2017 09:05:10 +0000"/>
+          </outline>
+        </outline>
+      </outline>
+      <outline text="public">
+        <outline type="note" isComment="true" text="Nodes stored in this part of the viewer tree will be accessible from the network in *the future*.  Use `viewer.publicStorage().getProperty(&quot;[anypath]&quot;)` to access such a global node.&#13;&#10;&#13;&#10;The URL to access a public node at &quot;/viewer/public/mypath/node&quot; will be something like &quot;http://host.example.com:3418/viewer/public/mypath/node&quot;. This will either be made available through AJAX or potentially by providing access functions like getPropertyHttp(&quot;10.0.5.22:3418&quot;, &quot;/viewer/public/mypath/node&quot;);" user="dizmo" _user_id="76697" note_id="870656" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+      </outline>
+      <outline text="private">
+        <outline type="note" isComment="true" text="Nodes stored in this part of the viewer tree will be accessible for all dizmos that are instantiated locally. Use `viewer.privateStorage().getProperty(&quot;[anypath]&quot;)` to access such a local node." user="dizmo" _user_id="76697" note_id="870657" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+      </outline>
+    </outline>
+    <outline text="dizmos">
+      <outline type="note" isComment="true" text="The subtree of the «/dizmos» node provides access to the data about all the dizmos instantiated in the dizmoViewer currently running. It does so by providing one node for every dizmo using the dizmoID as its name.&#13;&#10;&#13;&#10;Each of these dizmo nodes provides three subtrees providing attributes of a dizmo as well as access to its public and private data. Data in the private subtree can only be accessed by the dizmo that hold this node while data in the public subtree can be accessed by any dizmo that has access to that part of the data tree.&#13;&#10;&#13;&#10;Access to a dizmos information is provided by the following access methods:&#13;&#10;`dizmo.getAttribute(&quot;&lt;path&gt;&quot;);`  &#13;&#10;`dizmo.setAttribute(&quot;&lt;path&gt;&quot;);`  &#13;&#10;`dizmo.privateStorage.getProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`dizmo.privateStorage.setProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`dizmo.publicStorage.getProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`dizmo.publicStorage.setProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`&#13;&#10;&#13;&#10;For more information have a look at the chapters about «Data Tree» and «Persistence» in the developers documentation." user="dizmo" _user_id="76697" note_id="870658" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+      <outline text="[dizmoID]">
+        <outline type="note" isComment="true" text="The name of this node is a dizmoID that is used to identify a particular instance of a dizmo. This is a hex string that might look like &quot;h3753bff70b74d672524fa570f2fa2567&quot;. So the name of the node given here is just an example. In an actual environment expect there to be several of these nodes but all of them sharing the same structure as shown this example." user="dizmo" _user_id="76697" note_id="870659" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+        <outline text="attributes">
+          <outline type="note" isComment="true" text="The subtree of the «/dizmos/[dizmoID]/attributes» node provides all kinds of information about the particular instance of a dizmo. Access this information using `dizmo.getAttribute(&quot;[info-path]&quot;);`" user="dizmo" _user_id="76697" note_id="870660" dateModified="Sun, 10 Apr 2016 11:25:18 +0000"/>
+          <outline text="absoluteGeometry">
+            <outline type="note" isComment="true" text="This subtree of the «/dizmos/[dizmoID]/attributes» node provides information about absolute geometry of the dizmo. These values are based on a coordinate system that is given by the workspace. Access these items using `dizmo.getAttribute(absoluteGeometry/[info]&quot;);" user="dizmo" _user_id="76697" note_id="876372" dateModified="Thu, 21 Apr 2016 21:07:56 +0000"/>
+            <outline text="angle">
+              <outline type="note" isComment="true" text="The rotation at which the dizmo is displayed on the surface of dizmoViewer, relative to the viewer. A value of «0» means the dizmo is dawn upright relative to the dizmo viewer.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="881564" dateModified="Thu, 12 May 2016 03:46:21 +0000"/>
+            </outline>
+            <outline text="height">
+              <outline type="note" isComment="true" text="The height of the rectangle of the dizmo in pixels in relation to the dizmo space.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="881565" dateModified="Thu, 12 May 2016 03:46:16 +0000"/>
+            </outline>
+            <outline text="width">
+              <outline type="note" isComment="true" text="The width of the rectangle of the dizmo in pixels in relation to the dizmo space.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="881569" dateModified="Thu, 12 May 2016 03:46:00 +0000"/>
+            </outline>
+            <outline text="x">
+              <outline type="note" isComment="true" text="The x coordinate of the top left of the rectangle of the dizmo relative to the dizmo space.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="881566" dateModified="Thu, 12 May 2016 03:46:09 +0000"/>
+            </outline>
+            <outline text="y">
+              <outline type="note" isComment="true" text="The y coordinate of the top left of the rectangle of the dizmo relative to the dizmo space.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="881567" dateModified="Thu, 12 May 2016 03:46:05 +0000"/>
+            </outline>
+            <outline text="zoom">
+              <outline type="note" isComment="true" text="The zoom factor used to render the dizmo in relation to the dizmo space.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**default** 1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="881568" dateModified="Thu, 12 May 2016 03:46:25 +0000"/>
+            </outline>
+          </outline>
+          <outline text="bundleId">
+            <outline type="note" isComment="true" text="The bundleID of the bundle used to create this dizmo instance. This can be used to access more information about this dizmo by accessing `bundle.getAttributes(&quot;version&quot;);`&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** String&#13;&#10;**example** `com.dizmo.example`&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870665" dateModified="Fri, 10 Feb 2017 14:12:13 +0000"/>
+          </outline>
+          <outline text="childDizmos">
+            <outline type="note" isComment="true" text="An array of dizmoIDs of all dizmos located on this dizmo directly&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** Array of Strings&#13;&#10;**range** (hexstring)&#13;&#10;**example** [&quot;h3753bff70b74d672524fa570f2fa2567&quot;, &quot;hd4413a56a4c5c72f4ad24528757f9850&quot;]&#13;&#10;**subscribable** true&#13;&#10;**default** []" user="dizmo" _user_id="76697" note_id="870663" dateModified="Fri, 10 Feb 2017 14:11:38 +0000"/>
+          </outline>
+          <outline text="connection">
+            <outline text="direction">
+              <outline type="note" isComment="true" text="This item indicated if and how a dizmo is being shared via dizmoLive. It can have one of the following three values:&#13;&#10;* `&quot;outgoing&quot;` if the dizmo initiated the connection (i.e. was part of a connection that opened or if it was dragged onto a sharing parent dizmo later)&#13;&#10;* `&quot;incoming&quot;` if the dizmo was created based on data that was coming in&#13;&#10;* `&quot;&quot;` (an empty string) if the dizmo is not being shared via a live connection&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** string&#13;&#10;**default**  &quot;&quot;   &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870668" dateModified="Mon, 18 Apr 2016 22:49:35 +0000"/>
+            </outline>
+            <outline text="remoteHostId">
+              <outline type="note" isComment="true" text="This item contains the Id of the remote host from or to which a connection is active (see state/connected/direction). If there is no open connection this item is an empty string.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** string&#13;&#10;**default**  &quot;&quot;   &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870669" dateModified="Mon, 18 Apr 2016 22:49:49 +0000"/>
+            </outline>
+          </outline>
+          <outline text="created">
+            <outline type="note" isComment="true" text="The time when the dizmo was created (instantiated) in milliseconds since midnight of January 1, 1970, according to UTC time. Use  &#13;&#10;`d = new Date(parseInt(dizmo.getAttribute(&quot;created&quot;)));`  &#13;&#10;to get a date object representing the creation time.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** LongInteger&#13;&#10;**range** 0..(maxlongint)&#13;&#10;**example** `1420987102320` &#13;&#10;**subscribable** false&#13;&#10;**type** string" user="dizmo" _user_id="76697" note_id="870667" dateModified="Fri, 10 Feb 2017 14:10:56 +0000"/>
+          </outline>
+          <outline text="dockedDizmos">
+            <outline type="note" isComment="true" text="An array of dizmoIDs of all dizmos docked to this dizmo directly&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** Array of Strings&#13;&#10;**range** (hexstring)&#13;&#10;**example** [&quot;h96753bff70b74d672524fa570f2fa25ca3&quot;, &quot;h21413a56a4c5c72f4ad24528757f989a&quot;]&#13;&#10;**subscribable** true&#13;&#10;**default** []" user="dizmo" _user_id="76697" note_id="870664" dateModified="Fri, 10 Feb 2017 14:01:31 +0000"/>
+          </outline>
+          <outline text="geometry">
+            <outline type="note" isComment="true" text="This subtree of the «/dizmos/[dizmoID]/attributes» node provides information about geometry of the dizmo.  These values are based on the coordinate system that is given by the parent dizmo. Access these items using `dizmo.getAttribute(&quot;geometry/[info]&quot;);`" user="dizmo" _user_id="76697" note_id="870670" dateModified="Thu, 21 Apr 2016 21:08:35 +0000"/>
+            <outline text="front">
+              <outline text="height">
+                <outline type="note" isComment="true" text="The height of the rectangle of the dizmo front in pixels&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 50..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="1046451" dateModified="Wed, 05 Apr 2017 07:50:27 +0000"/>
+              </outline>
+              <outline text="width">
+                <outline type="note" isComment="true" text="The width of the rectangle of the dizmo front in pixels&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 65..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="1046453" dateModified="Wed, 05 Apr 2017 07:51:53 +0000"/>
+              </outline>
+            </outline>
+            <outline text="back">
+              <outline text="height">
+                <outline type="note" isComment="true" text="The height of the rectangle of the dizmo back in pixels. When not set, the dizmo viewer uses the front values also for the back side&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 50..4000&#13;&#10;**default** -1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="1046450" dateModified="Wed, 05 Apr 2017 07:53:49 +0000"/>
+              </outline>
+              <outline text="width">
+                <outline type="note" isComment="true" text="The width of the rectangle of the dizmo back in pixels. When not set, the dizmo viewer uses the front values also for the back side&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 65..4000&#13;&#10;**default** -1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="1046452" dateModified="Wed, 05 Apr 2017 07:53:38 +0000"/>
+              </outline>
+            </outline>
+            <outline text="angle">
+              <outline type="note" isComment="true" text="The rotation at which the dizmo is displayed on the surface of dizmoViewer. A value of «0» means the dizmo is dawn upright relative to the parent dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Float&#13;&#10;**range** 0..360&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870671" dateModified="Fri, 10 Feb 2017 13:59:26 +0000"/>
+            </outline>
+            <outline text="height">
+              <outline type="note" isComment="true" text="The current height of the rectangle of the dizmo in pixels. Is either the front or the back side value, related to the current state of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 50..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870672" dateModified="Wed, 05 Apr 2017 07:52:36 +0000"/>
+            </outline>
+            <outline text="maxHeight">
+              <outline type="note" isComment="true" text="The maximum height of the dizmo content in pixels. The user using the resize handle, cannot make the dizmo larger in height than this value&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 50..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870673" dateModified="Fri, 10 Feb 2017 13:59:00 +0000"/>
+            </outline>
+            <outline text="maxWidth">
+              <outline type="note" isComment="true" text="The maximum width of the dizmo content in pixels. The user using the resize handle, cannot make the dizmo larger in width than this value&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 65..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870674" dateModified="Fri, 10 Feb 2017 13:58:53 +0000"/>
+            </outline>
+            <outline text="minHeight">
+              <outline type="note" isComment="true" text="The minimal height of the dizmo content in pixels. The user using the resize handle, cannot make the dizmo smaller in height than this value&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 50..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870675" dateModified="Fri, 10 Feb 2017 13:58:40 +0000"/>
+            </outline>
+            <outline text="minWidth">
+              <outline type="note" isComment="true" text="The minimal width of the dizmo content in pixels. The user using the resize handle, cannot make the dizmo smaller in width than this value&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 65..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870676" dateModified="Fri, 10 Feb 2017 13:58:33 +0000"/>
+            </outline>
+            <outline text="width">
+              <outline type="note" isComment="true" text="The current width of the rectangle of the dizmo in pixels. Is either the front or the back side value, related to the current state of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 65..4000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870677" dateModified="Wed, 05 Apr 2017 07:52:23 +0000"/>
+            </outline>
+            <outline text="x">
+              <outline type="note" isComment="true" text="The x coordinate of the top left of the rectangle of the dizmo relative to the parent dizmo. The range is only checked if the dizmo does not have a parent&#13;&#10;&#13;&#10;&lt;a href=&quot;http://test.dizmo.com/docs/topics/position&quot;&gt;Details&lt;/a&gt;&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** -3000..3000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870678" dateModified="Fri, 10 Feb 2017 13:56:53 +0000"/>
+            </outline>
+            <outline text="y">
+              <outline type="note" isComment="true" text="The y coordinate of the top left of the rectangle of the dizmo relative to the parent dizmo. The range is only checked if the dizmo does not have a parent &#13;&#10;&#13;&#10;&lt;a href=&quot;http://test.dizmo.com/docs/topics/position&quot;&gt;Details&lt;/a&gt;&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** -3000..3000&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870679" dateModified="Fri, 10 Feb 2017 13:57:11 +0000"/>
+            </outline>
+            <outline text="zoom">
+              <outline type="note" isComment="true" text="The zoom factor used to render the dizmo on the dizmoViewer surface. A value of 1 means the dizmo is drawn the way it has been described by the original HTML and CSS code&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Float&#13;&#10;**range** 0.1..10&#13;&#10;**default** 1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870680" dateModified="Fri, 10 Feb 2017 13:58:11 +0000"/>
+            </outline>
+          </outline>
+          <outline text="lastError">
+            <outline type="note" isComment="true" text="The last raised error code from this dizmo.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** number&#13;&#10;**default** 0   &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870661" dateModified="Mon, 18 Apr 2016 22:49:06 +0000"/>
+          </outline>
+          <outline text="modified">
+            <outline type="note" isComment="true" text="The time when some data of the dizmo (like position, data, ...) was last modified in milliseconds since midnight of January 1, 1970, according to UTC timeUse  &#13;&#10;`d = new Date(parseInt(dizmo.getAttribute(&quot;modified&quot;)));`  &#13;&#10;to get a date object representing the creation time.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**example** `1420987102320` &#13;&#10;**subscribable** false&#13;&#10;**type** string" user="dizmo" _user_id="76697" note_id="870666" dateModified="Mon, 18 Apr 2016 22:47:45 +0000"/>
+          </outline>
+          <outline text="parentDizmo">
+            <outline type="note" isComment="true" text="The dizmoID of the dizmo on which this one is located. Empty string if this is the dizmoViewer surface. Setting a new parent is possible but restricted by several criteria to ensure conceptual &amp; visual integrity of the dizmos on the surface, have a look at the documentation about setting the parent for more detailed information.&#13;&#10;&#13;&#10;**write** true  &#13;&#10;**example** `&quot;h2753bff704c4d672524fa570f2fa28af&quot;` &#13;&#10;**subscribable** true&#13;&#10;**default** &quot;&quot;&#13;&#10;**type** string" user="dizmo" _user_id="76697" note_id="870662" dateModified="Mon, 18 Apr 2016 22:48:55 +0000"/>
+          </outline>
+          <outline text="settings">
+            <outline type="note" isComment="true" text="This subtree of the «/dizmos/[dizmoID]/attributes» node provides information about the settings of the dizmo mostly controlled by the user. Access these items using `dizmo.getAttribute(&quot;settings/[info]&quot;);`" user="dizmo" _user_id="76697" note_id="870688" dateModified="Sun, 10 Apr 2016 11:25:19 +0000"/>
+            <outline text="backgroundColor">
+              <outline type="note" isComment="true" text="**deprecated  - use frameColor instead**  &#13;&#10;~~The webcolor of the dizmo background. This is duplicate of frameColor. Up to API V1.1 and version 1.1 of dizmoViewer the order of the values was ARGB (#ffafc809 as a default)~~&#13;&#10;&#13;&#10;~~**write** true~~  &#13;&#10;~~**type** String~~  &#13;&#10;~~**range** (RGBA webcolor)~~  &#13;&#10;~~**default** `&quot;#afc809ff&quot;`~~" user="dizmo" _user_id="76697" note_id="870690" dateModified="Sun, 10 Apr 2016 11:25:19 +0000"/>
+            </outline>
+            <outline text="backgroundImage">
+              <outline type="note" isComment="true" text="**deprecated - use frameImage instead**    &#13;&#10;~~The URL of the current background image used to draw the dizmo. The image will be tiled if its size is smaller than the size of the surface~~&#13;&#10;&#13;&#10;~~**write** true~~&#13;&#10;~~**type** String~~&#13;&#10;~~**range** (URL)~~ &#13;&#10;~~**default** `&quot;&quot;`~~&#13;&#10;~~**example** `&quot;file:///Users/jdoe/Pictures/myBackground.png&quot;`~~" user="dizmo" _user_id="76697" note_id="870691" dateModified="Sun, 10 Apr 2016 11:25:19 +0000"/>
+            </outline>
+            <outline text="frameColor">
+              <outline type="note" isComment="true" text="The webcolor currently used to draw the frame of the dizmo. Up to API V1.1 and version 1.1 of dizmoViewer the order of the values was ARGB (#ffafc809 as a default)&#13;&#10;&#13;&#10;&lt;a href=&quot;http://test.dizmo.com/docs/topics/color&quot;&gt;Details&lt;/a&gt;&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** colorstring&#13;&#10;**range** color&#13;&#10;**default** #e6e6e6ff&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870692" dateModified="Mon, 18 Jul 2016 09:09:42 +0000"/>
+            </outline>
+            <outline text="frameImage">
+              <outline type="note" isComment="true" text="The URL of the current background image used to draw the frame of the dizmo&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**range** URL&#13;&#10;**default** &quot;&quot;&#13;&#10;**example** file:///Users/jdoe/Pictures/myBackground.png&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870693" dateModified="Thu, 12 May 2016 03:09:20 +0000"/>
+            </outline>
+            <outline text="frameOpacity">
+              <outline type="note" isComment="true" text="The opacity used to draw the frame of the dizmo. This a percentage given as a number between 0 and 1 where 1 means the dizmo's frame os fully opaque, i.e. intransparent&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** number&#13;&#10;**range** 0.15..1  &#13;&#10;**default** 1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870694" dateModified="Sat, 07 May 2016 22:33:19 +0000"/>
+            </outline>
+            <outline text="iconDarkImage">
+              <outline type="note" isComment="true" text="The URI of the icon of this dizmo instance to be used on a «dark» background. In most cases this will be equal to the URI of the bundle «dark icon» but it can be changed by the dizmo&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**range** URL&#13;&#10;**default** bundle://Icon-dark.svg&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870695" dateModified="Sat, 14 May 2016 06:56:34 +0000"/>
+            </outline>
+            <outline text="iconImage">
+              <outline type="note" isComment="true" text="The URI of the icon of this dizmo instance. In most cases this will be equal to the URI of the bundle icon. However this URI can be changed by the dizmo to display an alert for example&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**range** URL&#13;&#10;**default** bundle://Icon.svg&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870696" dateModified="Tue, 28 Jun 2016 21:08:12 +0000"/>
+            </outline>
+            <outline text="removeFadeTime">
+              <outline type="note" isComment="true" text="The time in milliseconds to remove a dizmo from the current setup. Set this to be longer the more data will be lost when a dizmo is removed. I.e. right after instantiating a dizmo this value can be close to zero. The more data has been entered or collected the higher this number should. However for practical reasons it should usually not be larger than 5000 milliseconds&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** number  &#13;&#10;**range** 0..5000  &#13;&#10;**default** 1000&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870697" dateModified="Thu, 12 May 2016 02:03:38 +0000"/>
+            </outline>
+            <outline text="title">
+              <outline type="note" isComment="true" text="The current title of the dizmo&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type**  string&#13;&#10;**default** variable&#13;&#10;**example** Example dizmo&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870698" dateModified="Sat, 07 May 2016 22:39:53 +0000"/>
+            </outline>
+            <outline text="titleColor">
+              <outline type="note" isComment="true" text="The webcolor of the title text&#13;&#10;Up to API V1.1 and version 1.1 of dizmoViewer the order of the values was ARGB (#ffafc809 as a default)&#13;&#10;&#13;&#10;&lt;a href=&quot;http://test.dizmo.com/docs/topics/color&quot;&gt;Details&lt;/a&gt;&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** colorstring&#13;&#10;**range** color&#13;&#10;**default** #000000ff&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870699" dateModified="Mon, 18 Jul 2016 09:09:56 +0000"/>
+            </outline>
+            <outline text="urlToOpen">
+              <outline type="note" isComment="true" text="The current Url of the TinyBrowser.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** string&#13;&#10;**range** URL&#13;&#10;**default** &quot;&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870689" dateModified="Thu, 12 May 2016 03:08:55 +0000"/>
+            </outline>
+            <outline text="userControls">
+              <outline type="note" isComment="true" text="This subtree of the «/dizmos/[dizmoID]/attributes/settings» node defines which parts of the user controls are available to the user. Most of them concern the context menu of the dizmo. Access these items using `dizmo.getAttribute(&quot;settings/userControls/[element]&quot;);` " user="dizmo" _user_id="76697" note_id="870700" dateModified="Sun, 10 Apr 2016 11:25:19 +0000"/>
+              <outline text="allowBackground">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to set an image as the background of the dizmo using the context menu of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870701" dateModified="Sat, 07 May 2016 22:41:22 +0000"/>
+              </outline>
+              <outline text="allowColor">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to change the background color of the dizmo using the context menu of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default**  true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870702" dateModified="Sat, 07 May 2016 22:42:12 +0000"/>
+              </outline>
+              <outline text="allowLock">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to lock and unlock a dizmo using the context menu of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870703" dateModified="Sat, 07 May 2016 22:42:25 +0000"/>
+              </outline>
+              <outline text="allowOpacity">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to change the opacity of the frame of the dizmo using its context menu&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870704" dateModified="Sat, 07 May 2016 22:42:35 +0000"/>
+              </outline>
+              <outline text="allowRemove">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to remove this dizmo instance by using the context menu of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870705" dateModified="Sat, 07 May 2016 22:42:46 +0000"/>
+              </outline>
+              <outline text="allowResize">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to change the size and side ration of the dizmo using the handle on the bottom right corner of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870706" dateModified="Sat, 07 May 2016 22:42:58 +0000"/>
+              </outline>
+              <outline text="allowSticky">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to make a dizmo «sticky», i.e. making it hover over the other dizmos, using the context menu of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870707" dateModified="Sat, 07 May 2016 22:43:09 +0000"/>
+              </outline>
+              <outline text="allowTitle">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to change the title of the dizmo using the context menu of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870708" dateModified="Sat, 07 May 2016 22:43:21 +0000"/>
+              </outline>
+              <outline text="allowZoom">
+                <outline type="note" isComment="true" text="If this flag is set to true the user will be able to zoom the dizmo using the handle in the bottom left corner of the dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870709" dateModified="Sat, 07 May 2016 22:43:32 +0000"/>
+              </outline>
+            </outline>
+          </outline>
+          <outline text="state">
+            <outline type="note" isComment="true" text="This subtree of the «/dizmos/[dizmoID]/attributes» node provides information about the state of the dizmo and the way it is displayed depending on these settings. Access these items using `dizmo.getAttribute(&quot;state/[info]&quot;);`" user="dizmo" _user_id="76697" note_id="870710" dateModified="Sun, 10 Apr 2016 11:25:19 +0000"/>
+            <outline text="active">
+              <outline type="note" isComment="true" text="This flag is set to true by the dizmoViewer whenever the content of a dizmo is active, i.e. clickable. This goes along with showing the cogwheel of a dizmo in the top right corner.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870722" dateModified="Sat, 07 May 2016 22:46:02 +0000"/>
+            </outline>
+            <outline text="closing">
+              <outline type="note" isComment="true" text="This attribute is set to true by dizmo space while a dizmo is «closing» i.e. as long as it is in the visual phase of fading out. If this is set to false during this phase, deletion will be stopped the same way this happens when a user clicks the dizmo while it is fading out.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870716" dateModified="Thu, 12 May 2016 00:30:04 +0000"/>
+            </outline>
+            <outline text="dragging">
+              <outline type="note" isComment="true" text="This flag is set to true, while a dizmo is being dragged around by the user. So subscribing to it and interpreting the transition the dizmo can get notified when dragging starts or stops.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870717" dateModified="Sat, 07 May 2016 22:44:54 +0000"/>
+            </outline>
+            <outline text="focused">
+              <outline type="note" isComment="true" text="This flag is set to true if the dizmo has the focus for user interaction events.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870715" dateModified="Thu, 12 May 2016 01:58:27 +0000"/>
+            </outline>
+            <outline text="frameHidden">
+              <outline type="note" isComment="true" text="True when the frame of the dizmo is hidden, i.e. all additional interaction elements like the header including settings, resize and zoom are not shown. In addition, unlike titleHidden, the bounding rectangle of the dizmo is reduced by the height of the title bar. So any touch just above the dizmo are passed to neighboring dizmo if there is one.&#13;&#10;  &#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870711" dateModified="Thu, 08 Feb 2018 14:17:34 +0000"/>
+            </outline>
+            <outline text="front">
+              <outline type="note" isComment="true" text="If this flag is set to true the dizmo will be shown with its front side. If necessary a transition animation will be shown when turning the dizmo around. This animation need to be init by the dizmo.js implementation.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** true&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870714" dateModified="Thu, 12 May 2016 02:04:12 +0000"/>
+            </outline>
+            <outline text="frozen">
+              <outline type="note" isComment="true" text="True when the content of the dizmo is frozen, i.e. if the last bitmap rendered is displayed instead of updating the dizmos content continuously. When starting dizmoViewer this is set to true by default. However the dizmoElements library will set this to false before passing control to the dizmo.&#13;&#10; &#13;&#10;&lt;a  href=&quot;http://test.dizmo.com/docs/topics/frozen&quot;&gt;Details&lt;/a&gt;&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**available since** 1.2r1&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870712" dateModified="Mon, 18 Jul 2016 09:09:17 +0000"/>
+            </outline>
+            <outline text="hidden">
+              <outline type="note" isComment="true" text="If this flag is set to true the dizmo is hidden, i.e. it will not be visible to the user anymore. Nevertheless it will still exist and run. Please note that this is **different** from the «HiddenDizmo» property in Info.plist which defines whether or not the dizmo will be shown in the «Creator» dizmo.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870718" dateModified="Mon, 16 Apr 2018 08:30:18 +0000"/>
+            </outline>
+            <outline text="iconized">
+              <outline type="note" isComment="true" text="If this flag is set to true the dizmo will be «iconized», i.e. instead of showing the entire dizmo, dizmoViewer will only draw its icon.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870719" dateModified="Sat, 07 May 2016 22:45:17 +0000"/>
+            </outline>
+            <outline text="locked">
+              <outline type="note" isComment="true" text="If this flag is set to true the dizmo will be locked. This will make it impossible for the user to move, rotate, resize, remove or in any other way change the dizmo frame. However the content of the dizmo will still be available for interaction without limitation.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870720" dateModified="Sat, 07 May 2016 22:45:32 +0000"/>
+            </outline>
+            <outline text="sticky">
+              <outline type="note" isComment="true" text="If this flag is set to true the dizmo will be made «sticky», i.e. make it hover over the other dizmos.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870721" dateModified="Sat, 07 May 2016 22:45:45 +0000"/>
+            </outline>
+            <outline text="titleHidden">
+              <outline type="note" isComment="true" text="If this flag is set to true the titlebar of the dizmo will be made invisible while still allowing the user «grab» the area above the dizmo to drag it around.&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** boolean&#13;&#10;**default** false&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870713" dateModified="Sat, 07 May 2016 22:44:15 +0000"/>
+            </outline>
+          </outline>
+          <outline text="stickyGeometry">
+            <outline type="note" isComment="true" text="This subtree of the «/dizmos/[dizmoID]/attributes» node provides information about geometry of the dizmo when it is made sticky. This is rather different from the standard geometry as it is based on a different coordinate system. Access these items using `dizmo.getAttribute(&quot;stickyGeometry/[info]&quot;);`" user="dizmo" _user_id="76697" note_id="870681" dateModified="Sun, 10 Apr 2016 11:25:19 +0000"/>
+            <outline text="angle">
+              <outline type="note" isComment="true" text="The rotation at which the dizmo is displayed on the «sticky layer». A value of «0» means the dizmo is dawn upright  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Float&#13;&#10;**range** 0..360&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870682" dateModified="Fri, 10 Feb 2017 14:12:47 +0000"/>
+            </outline>
+            <outline text="~~left~~">
+              <outline type="note" isComment="true" text="~~When resizing the dizmoViewer window, a sticky dizmo remembers which border it's relative to: true if the sticky position of the dizmo is relative to left, otherwise to right.&#13;&#10;When set to false, x needs to be negative.~~&#13;&#10;&#13;&#10;~~**write** false~~&#13;&#10;~~**type** boolean~~&#13;&#10;~~**default**  variable~~&#13;&#10;~~**subscribable** true~~" user="dizmo" _user_id="76697" note_id="870683" dateModified="Tue, 06 Sep 2016 19:59:12 +0000"/>
+            </outline>
+            <outline text="~~top~~">
+              <outline type="note" isComment="true" text="~~When resizing the dizmoViewer window, a sticky dizmo remembers which border it's relative to: true if the sticky position of the dizmo is relative to top, otherwise bottom.&#13;&#10;When set to false, y needx to be negative.~~&#13;&#10;&#13;&#10;~~**write** false~~&#13;&#10;~~**type** boolean~~&#13;&#10;~~**default** variable~~&#13;&#10;~~**subscribable** true~~" user="dizmo" _user_id="76697" note_id="870684" dateModified="Tue, 06 Sep 2016 19:58:52 +0000"/>
+            </outline>
+            <outline text="x">
+              <outline type="note" isComment="true" text="The x position of the top left of the rectangle of the dizmo measured in pixels of the visible surface of dizmoViewer  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 0..(width of dizmoViewer)&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870685" dateModified="Fri, 10 Feb 2017 14:13:56 +0000"/>
+            </outline>
+            <outline text="y">
+              <outline type="note" isComment="true" text="The y position of the top left of the rectangle of the dizmo measured in pixels of the visible surface of dizmoViewer  &#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Integer&#13;&#10;**range** 0..(heigth of dizmoViewer) &#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870686" dateModified="Fri, 10 Feb 2017 14:14:17 +0000"/>
+            </outline>
+            <outline text="zoom">
+              <outline type="note" isComment="true" text="The zoom factor used to render the dizmo on the «sticky layer». A value of 1 means the dizmo is drawn the way it has been described by the original HTML and CSS code&#13;&#10;&#13;&#10;**write** true&#13;&#10;**type** Float&#13;&#10;**range** 0.1..10&#13;&#10;**default** variable&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870687" dateModified="Fri, 10 Feb 2017 14:14:36 +0000"/>
+            </outline>
+          </outline>
+          <outline text="storage">
+            <outline type="note" isComment="true" text="Informations about the storaged files" user="dizmo" _user_id="76697" note_id="972801" dateModified="Fri, 25 Nov 2016 11:35:49 +0000"/>
+            <outline text="size">
+              <outline type="note" isComment="true" text="Return the merged size of all storage files.  &#13;&#10;  &#13;&#10;**write** false  &#13;&#10;**type** Integer  &#13;&#10;**default** 0  &#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="972803" dateModified="Fri, 10 Feb 2017 14:15:05 +0000"/>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="public">
+          <outline type="note" isComment="true" text="Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `dizmo.publicStorage().getProperty(&quot;[anypath]&quot;)` to access such a node.&#13;&#10;&#13;&#10;This is also where you should provide data for other dizmos that are docked or put onto to yours. " user="dizmo" _user_id="76697" note_id="870723" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+        </outline>
+        <outline text="private">
+          <outline type="note" isComment="true" text="Nodes stored in this part of the dizmo tree will be accessible from the dizmo itself only. Use `dizmo.privateStorage().getProperty(&quot;[anypath]&quot;)` to access such a node. " user="dizmo" _user_id="76697" note_id="870724" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+        </outline>
+      </outline>
+    </outline>
+    <outline text="bundles">
+      <outline type="note" isComment="true" text="The subtree of the «/bundles» node provides access to the data about all the bundles installed in the dizmoViewer currently running. It does so by providing one node for every bundle using the bundleID as its name.&#13;&#10;&#13;&#10;Each of these bundle nodes provides three subtrees providing attributes of a bundle as well as access to its public and private data. Data in the private subtree can only be accessed by dizmos that have been created using this bundle while data in the public subtree can be accessed by any dizmo that has access to that part of the data tree.&#13;&#10;&#13;&#10;Access to a dizmos information is provided by the following access methods:&#13;&#10;`bundle.getAttribute(&quot;&lt;path&gt;&quot;);`  &#13;&#10;`bundle.setAttribute(&quot;&lt;path&gt;&quot;);`  &#13;&#10;`bundle.privateStorage.getProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`bundle.privateStorage.setProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`bundle.publicStorage.getProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`  &#13;&#10;`bundle.publicStorage.setProperty(&quot;&lt;path&gt;&quot;[, {&lt;options&gt;}]);`&#13;&#10;&#13;&#10;For more information have a look at the chapters about «Data Tree» and «Persistence» in the developers documentation." user="dizmo" _user_id="76697" note_id="870725" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+      <outline text="[bundleID]">
+        <outline type="note" isComment="true" text="The name of this node is a bundleID (in reverse domain name notation) that is used to identify a particular bundle (the source items of a dizmo). In an actual environment expect there to be several of these nodes but all of them sharing the same structure as shown in here. " user="dizmo" _user_id="76697" note_id="870726" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+        <outline text="attributes">
+          <outline type="note" isComment="true" text="The subtree of the «/bundles/[bundleID]/attributes» node provides all kinds of information about the particular bundle used to instantiate dizmos of this particular kind. Access this information using `bundle.getAttribute(&quot;[info-path]&quot;);` " user="dizmo" _user_id="76697" note_id="870727" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          <outline text="secret">
+            <outline type="note" isComment="true" text="This data item is installed by the viewer when installing a bundle from dizmoStore where the data is stored as an encrypted secret. This data item can be used to safely store data a dizmo instance needs in order to access an external systems like an API key for example. When using this make sure that access to WebInspector is turned off to avoid access to the secret for unauthorized developers.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;{&quot;GoogleMapsAPIKey&quot; : &quot;#Af567S0k19sA55i&quot;, &quot;FaceBookAPIKey&quot;:  &quot;#Ezxkc&amp;D7qBm0k19&quot; }&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870753" dateModified="Wed, 08 Jun 2016 00:07:23 +0000"/>
+          </outline>
+          <outline text="author">
+            <outline type="note" isComment="true" text="The name of the developer who developed this bundle.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;John H. Doe&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870728" dateModified="Tue, 07 Jun 2016 23:53:13 +0000"/>
+          </outline>
+          <outline text="category">
+            <outline type="note" isComment="true" text="The category under which the developer of this bundle has published his work.  This information is read from the `Category` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;tools&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870729" dateModified="Tue, 07 Jun 2016 23:53:26 +0000"/>
+          </outline>
+          <outline text="description">
+            <outline type="note" isComment="true" text="The description the developer of this bundle has provided with his work. This information is read from the `Description` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;An example dizmo proudly presented by John H. Doe&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870731" dateModified="Tue, 07 Jun 2016 23:54:54 +0000"/>
+          </outline>
+          <outline text="dizmoInstances">
+            <outline type="note" isComment="true" text="An array of the dizmoIDs of all dizmos instantiated based on this bundle&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;h8bc3bff70b74d672524fa570f2fa2599&quot;, &quot;h52413a56a4c5c72f4ad24528757f99b2&quot;]&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870732" dateModified="Tue, 07 Jun 2016 23:55:36 +0000"/>
+          </outline>
+          <outline text="dizmoJsVersion">
+            <outline type="note" isComment="true" text="The version of the dizmoJS API library this bundle uses.  This information is read from the `ApiVersion` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.2&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870733" dateModified="Tue, 07 Jun 2016 23:55:59 +0000"/>
+          </outline>
+          <outline text="elementsVersion">
+            <outline type="note" isComment="true" text="The version of the dizmoElements library this bundle uses.  This information is read from the `ElementsVersion` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.0&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870734" dateModified="Tue, 07 Jun 2016 23:56:12 +0000"/>
+          </outline>
+          <outline text="embeddedBundles">
+            <outline type="note" isComment="true" text="A list of bundle IDs that are embedded in this bundle too. These bundles are read from Info.plist and will be deinstalled too, if the bundle itself is deinstalled. Only embedded bundles with same domain will be deinstalled so make sure embedded bundles share the same domain in  the bundleID.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;com.example.embedded1&quot;, &quot;com.example.embedded2&quot;, &quot;com.example.embedded3&quot;] &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870730" dateModified="Tue, 07 Jun 2016 23:54:13 +0000"/>
+          </outline>
+          <outline text="helperVersion">
+            <outline type="note" isComment="true" text="The version of the dizmo helper library this bundle uses. This information is read from the HelperVersion parameter of the bundle's Info.plist file.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** 1.0&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="893824" dateModified="Tue, 07 Jun 2016 23:57:46 +0000"/>
+          </outline>
+          <outline text="height">
+            <outline type="note" isComment="true" text="The standard height of the rectangle of the dizmo in pixels&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870736" dateModified="Tue, 07 Jun 2016 23:58:52 +0000"/>
+          </outline>
+          <outline text="hidden">
+            <outline type="note" isComment="true" text="This flag is true for dizmos that will never appear in the creator because they are instantiated by other interaction elements. The «About» and the «Creator» dizmos are some good examples of this type of dizmos&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870735" dateModified="Tue, 07 Jun 2016 23:57:59 +0000"/>
+          </outline>
+          <outline text="iconDarkImage">
+            <outline type="note" isComment="true" text="The URI of the icon of this bundle to be used on a «dark» background.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**range** URL&#13;&#10;**example** &quot;https://localhost:42613/bundles/com.dizmo.example/Icon-dark.svg&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870738" dateModified="Wed, 08 Jun 2016 00:11:48 +0000"/>
+          </outline>
+          <outline text="iconImage">
+            <outline type="note" isComment="true" text="The URI of the icon of this bundle&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**range** URL&#13;&#10;**example** &quot;https://localhost:42613/bundles/com.dizmo.example/Icon.svg&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870739" dateModified="Wed, 08 Jun 2016 00:11:58 +0000"/>
+          </outline>
+          <outline text="internal">
+            <outline type="note" isComment="true" text="This flag is true for dizmos are prebuilt into dizmoViewer and can therefore not be removed by the user. The «Pad» or the «Tiny Browser» dizmos are some good examples of this type of dizmos&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870740" dateModified="Wed, 08 Jun 2016 00:04:06 +0000"/>
+          </outline>
+          <outline text="languages">
+            <outline type="note" isComment="true" text="An array of ISO 639-1 codes listing the languages supported by this bundle&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;en&quot;, &quot;de&quot;, &quot;fr&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870741" dateModified="Wed, 08 Jun 2016 00:04:22 +0000"/>
+          </outline>
+          <outline text="minSpaceVersion">
+            <outline type="note" isComment="true" text="The minimum version of dizmoViewer this bundle needs to successfully instantiate dizmos. The version must be composed of three integers separated by dots. This information is read from the `MinSpaceVersion` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.2&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870742" dateModified="Wed, 08 Jun 2016 00:04:34 +0000"/>
+          </outline>
+          <outline text="name">
+            <outline type="note" isComment="true" text="The of a bundle shown in the Creator dizmo. This information is read from the `BundleName` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;Example&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870743" dateModified="Wed, 08 Jun 2016 00:04:44 +0000"/>
+          </outline>
+          <outline text="options">
+            <outline type="note" isComment="true" text="This subtree node provides collects all options that have been defined for the bundle by the developer." user="dizmo" _user_id="76697" note_id="870749" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+            <outline text="allowInspector">
+              <outline type="note" isComment="true" text="If this is set to false it is not possible to open WebInspector for dizmos instantiated from this bundle. This is should be used to avoid easy access to the internal code and data of a dizmo.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870750" dateModified="Wed, 08 Jun 2016 00:06:27 +0000"/>
+            </outline>
+          </outline>
+          <outline text="storeVersionString">
+            <outline type="note" isComment="true" text="The lasts version of this bundle on the shop server as a machine readable string composed of three integers separated by dots, the numbers indicate major version, minor version and update version. This information could be updated by the API call ViewerCore.updateStoreVersions()&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.0.15&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870748" dateModified="Wed, 08 Jun 2016 00:06:04 +0000"/>
+          </outline>
+          <outline text="tags">
+            <outline type="note" isComment="true" text="An array tags that have been associated by the developer with this bundle&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** array of strings&#13;&#10;**example** [&quot;chess&quot;, &quot;2player&quot;, &quot;easy&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870745" dateModified="Wed, 08 Jun 2016 00:05:14 +0000"/>
+          </outline>
+          <outline text="title">
+            <outline type="note" isComment="true" text="The default title displayed for a dizmo instantiated from this bundle. This information is read from the `BundleDisplayName` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;One Example&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870744" dateModified="Wed, 08 Jun 2016 00:05:02 +0000"/>
+          </outline>
+          <outline text="version">
+            <outline type="note" isComment="true" text="A string indicating the version / build for this bundle which is meant to be human readable. This information is read from the `BundleVersion` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.0b2 Build 344&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870746" dateModified="Wed, 08 Jun 2016 00:05:27 +0000"/>
+          </outline>
+          <outline text="versionString">
+            <outline type="note" isComment="true" text="The version of the instance of this bundle as a machine readable string composed of three integers separated by dots, the numbers indicate major version, minor version and update version.  This information is read from the `BundleShortVersionString` parameter of the bundle's Info.plist file&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** &quot;1.0.15&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870747" dateModified="Wed, 08 Jun 2016 00:05:39 +0000"/>
+          </outline>
+          <outline text="width">
+            <outline type="note" isComment="true" text="The standard width of the rectangle of the dizmo in pixels&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** number&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870737" dateModified="Tue, 07 Jun 2016 23:59:05 +0000"/>
+          </outline>
+        </outline>
+        <outline text="public">
+          <outline type="note" isComment="true" text="Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `bundle.publicStorage().getProperty(&quot;[anypath]&quot;)` to access such a node. " user="dizmo" _user_id="76697" note_id="870751" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+        </outline>
+        <outline text="private">
+          <outline type="note" isComment="true" text="Nodes stored in this part of the dizmo tree will be accessible only from all the dizmos that have been instantiated using the bundle this subtree belongs to. Use `bundle.privateStorage().getProperty(&quot;[anypath]&quot;)` to access such a node. " user="dizmo" _user_id="76697" note_id="870752" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+        </outline>
+      </outline>
+    </outline>
+    <outline text="remoteHosts">
+      <outline type="note" isComment="true" text="Subtree to get data about available live hosts and connections" user="dizmo" _user_id="76697" note_id="870754" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+      <outline text="[remoteHostID]">
+        <outline type="note" isComment="true" text="A unique identifier like the IP address, the reverse lookup name or the host name of another dizmoViewer instance that is connected or can be connected to the local dizmoViewer instance. Don't make any assumptions about the format of this Id as it might change in the future.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** Any string  &#13;&#10;**example**   &quot;dev001.example.com-1&quot;&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870755" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+        <outline text="attributes">
+          <outline text="confirmed">
+            <outline type="note" isComment="true" text="This item is set to true if the user has confirmed that the host is a valid dizmoLive destination or if the connection details are coming from a trusted source.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** Boolean&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870759" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="connectionState">
+            <outline type="note" isComment="true" text="This item provides the state of the connection. The states provided should be self explaining.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** [&quot;closed&quot;, &quot;connecting&quot;, &quot;open&quot;, &quot;closing&quot;]  &#13;&#10;**example**   &quot;connecting&quot;&#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870756" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="dizmos">
+            <outline type="note" isComment="true" text="An array of dizmoIDs of the dizmos currently transmitting from and to the other dizmoViewer if there is currently is an open connection.&#13;&#10;&#13;&#10;&lt;b&gt;write&lt;/b&gt; false  &#13;&#10;&lt;b&gt;type&lt;/b&gt; Array of Strings  &#13;&#10;&lt;b&gt;range&lt;/b&gt; (hexstring)  &#13;&#10;&lt;b&gt;example&lt;/b&gt; [&quot;h3753bff70b74d672524fa570f2fa2567&quot;, &quot;hd4413a56a4c5c72f4ad24528757f9850&quot;]  &#13;&#10;**prev-path** /viewer/openLiveConnections/dizmos &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870765" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="https://checkvist.com/checklists/481266#"/>
+          <outline text="hostName">
+            <outline type="note" isComment="true" text="The host name of the other dizmoViewer. This string is usually grabbed from the operating system.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** (host String)  &#13;&#10;**example** &quot;local.otherComputer&quot;  &#13;&#10;**prev-path** /viewer/openLiveConnections/hostName &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870766" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="ipv4address">
+            <outline type="note" isComment="true" text="The IPv4 address of the device on which the remote instance of dizmoViewer is running in Dot-decimal notation.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Dot-decimal)&#13;&#10;**example** [&quot;192.168.0.3&quot;, &quot;192.168.57.1&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870761" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="ipv4livehub">
+            <outline type="note" isComment="true" text="This field provides the IPv4 address of the hub / reflector that is or has to be used to connect to the remote host. If the remote dizmoViewer instance is available using a direct LAN connection this is set to &quot;127.0.0.1&quot; (localhost).&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Dot-decimal)&#13;&#10;**example** [&quot;127.0.0.1&quot;, &quot;198.51.100.1&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870760" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="ipv6address">
+            <outline type="note" isComment="true" text="The IPv6 address of the device on which the remote instance of dizmoViewer is running in Colon-hex notation.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Colon-hex)&#13;&#10;**example** [&quot;2001:0db8:85a3:08d3:1319:8a2e:0370:1234/64&quot;, &quot;2001:0db8:85a3:08d3:1319:8a2e:0370:5342/64&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870763" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="ipv6livehub">
+            <outline type="note" isComment="true" text="This field provides the IPv6 address of the dizmoLive hub / reflector that is or has to be used to connect to the remote host. If the remote dizmoViewer instance is available using a direct LAN connection this is set to &quot;::1&quot; (localhost).&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** List of strings (Colon-hex)&#13;&#10;**example** [&quot;::1&quot;, &quot;2001:0db8:85a3:08d3:1319:8a2e:0370:7347/64&quot;]&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870762" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="source">
+            <outline type="note" isComment="true" text="This item indicates the source of the remote host.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** string&#13;&#10;**example** ssdp | dizmo&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870758" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="time">
+            <outline type="note" isComment="true" text="The time of the latest connection status change.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** unsigned int  &#13;&#10;**range** (0 - UINT_MAX)  &#13;&#10;**example** 1234567890&#13;&#10;**prev-path** /viewer/openLiveConnections/time &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870757" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+          <outline text="userName">
+            <outline type="note" isComment="true" text="Name of the user that has signed in on the remote dizmoViewer.&#13;&#10;&#13;&#10;**write** false  &#13;&#10;**type** String  &#13;&#10;**range** Any string  &#13;&#10;**example**   &quot;kkratzenstein&quot;&#13;&#10;**prev-path** /viewer/openLiveConnections/userName &#13;&#10;**subscribable** true" user="dizmo" _user_id="76697" note_id="870764" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
+          </outline>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>
