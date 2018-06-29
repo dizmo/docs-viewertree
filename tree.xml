@@ -580,7 +580,7 @@
           <outline text="options">
             <outline type="note" isComment="true" text="This subtree node provides collects all options that have been defined for the bundle by the developer." user="dizmo" _user_id="76697" note_id="870749" dateModified="Sun, 10 Apr 2016 11:25:20 +0000"/>
             <outline text="allowInspector">
-              <outline type="note" isComment="true" text="If this is set to false it is not possible to open WebInspector for dizmos instantiated from this bundle. This is should be used to avoid easy access to the internal code and data of a dizmo.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**subscribable** false" user="dizmo" _user_id="76697" note_id="870750" dateModified="Wed, 08 Jun 2016 00:06:27 +0000"/>
+              <outline type="note" isComment="true" text="If this is set to false it is not possible to open WebInspector for dizmos instantiated from this bundle. This is should be used to avoid easy access to the internal code and data of a dizmo.&#13;&#10;&#13;&#10;**write** false&#13;&#10;**type** boolean&#13;&#10;**subscribable** false&#13;&#10;**default** undefined" user="dizmo" _user_id="76697" note_id="870750" dateModified="Wed, 08 Jun 2016 00:06:27 +0000"/>
             </outline>
           </outline>
           <outline text="storeVersionString">
