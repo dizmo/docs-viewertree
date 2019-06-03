@@ -694,28 +694,24 @@ Name of the user that has signed in on the remote dizmoViewer.
   * **subscribable**: True
 ### ~~Setup~~ ###
 ~~This subtree of the «/viewer/attributes» node provides information about the setup that has last been stored / loaded. Access them using `viewer.getAttribute("setup/[info]");`~~    ~~
-  * available since: 1.1r3
   * **subscribable**: True
 #### ~~Id~~ ####
 The id of the current setup. This will change after «Load», «Save», «Clear» and «Rename» Empty string if cleared.
   * **write**: False
   * **type**: string
   * **default**:
-  * available since: 1.1r3
   * **subscribable**: True
 #### ~~Name~~ ####
 The name of the setup given to it by its owner  The dizmoID of the person who created and therefore owns a setup. Ownership will not be changed if someone else with the right to write back to a shared setup has saved an updated version.
   * **write**: False
   * **type**: string
   * **default**:
-  * available since: 1.1r3
   * **subscribable**: True
 #### ~~Owner~~ ####
 ~~The dizmoID of the person who created and therefore owns a setup. Ownership will not be changed if someone else with the right to write back to a shared setup has saved an updated version.
   * **write**: False
   * **type**: string
   * **default**:
-  * available since: 1.1r3
   * **subscribable**: True
 ## Public ##
 Nodes stored in this part of the viewer tree will be accessible from the network in *the future*.  Use `viewer.publicStorage().getProperty("[anypath]")` to access such a global node. The URL to access a public node at "/viewer/public/mypath/node" will be something like "http://host.example.com:3418/viewer/public/mypath/node". This will either be made available through AJAX or potentially by providing access functions like getPropertyHttp("10.0.5.22:3418", "/viewer/public/mypath/node");
