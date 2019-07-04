@@ -747,6 +747,16 @@
                 "subscribable": true,
                 "default": [],
                 "dizmojs_version": ["1.3", "1.4"]
+                "[dizmoID]": {
+                    "-note": "A value identifying the current docking stage",
+                    "write": true,
+                    "type": "[string]",
+                    "range": "preparing, docked, (finished)",
+                    "example": "preparing",
+                    "subscribable": true,
+                    "default": "",
+                    "dizmojs_version": ["1.3", "1.4"]
+                }
             },
             "geometry": {
                 "-note": "This subtree of the «/dizmos/[dizmoID]/attributes» node provides information about geometry of the dizmo.  These values are based on the coordinate system that is given by the parent dizmo. Access these items using `dizmo.getAttribute(\"geometry/[info]\");`",
