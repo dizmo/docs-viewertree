@@ -1172,6 +1172,14 @@
                     "default": false,
                     "subscribable": true,
                     "dizmojs_version": ["1.3", "1.4"]
+                },
+                "visible": {
+                    "-note": "If this flag is true the dizmo is (at least partially) visible in the visible rectangle of the workspace",
+                    "write": false,
+                    "type": "boolean",
+                    "default": false,
+                    "subscribable": true,
+                    "dizmojs_version": ["1.4"]
                 }
             },
             "stickyGeometry": {
