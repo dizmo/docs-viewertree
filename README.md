@@ -1,3 +1,5 @@
+**IMPORTANT:** This MD formatted description of the dizmo data tree description is **not** automatically updated using the JSON version of the data tree specification. So in order to be sure to have the latest and up-to-date version of the description please use the JSON version of this specification. 
+
 # Viewer #
 The subtree of the «/viewer» node provides all data about the instance of dizmoViewer currently running and allows dizmos to store that should be made available to other dizmos running in this dizmoViewer instance (private subtree) as well as providing access to information shared with the world (public subtree).     Access to this information is provided by the access methods of the viewer object:
 
