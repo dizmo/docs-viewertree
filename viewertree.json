@@ -634,10 +634,10 @@
         }
     },
     "public": {
-        "-note": "Nodes stored in this part of the viewer tree will be accessible from the network in *the future*.  Use `viewer.publicStorage().getProperty(\"[anypath]\")` to access such a global node. The URL to access a public node at \"/viewer/public/mypath/node\" will be something like \"http://host.example.com:3418/viewer/public/mypath/node\". This will either be made available through AJAX or potentially by providing access functions like getPropertyHttp(\"10.0.5.22:3418\", \"/viewer/public/mypath/node\");"
+        "-note": "Nodes stored in this part of the viewer tree will be accessible from the network in *the future*.  Use `viewer.publicStorage.getProperty(\"[anypath]\")` to access such a global node. The URL to access a public node at \"/viewer/public/mypath/node\" will be something like \"http://host.example.com:3418/viewer/public/mypath/node\". This will either be made available through AJAX or potentially by providing access functions like getPropertyHttp(\"10.0.5.22:3418\", \"/viewer/public/mypath/node\");"
     },
     "private": {
-        "-note": "Nodes stored in this part of the viewer tree will be accessible for all dizmos that are instantiated locally. Use `viewer.privateStorage().getProperty(\"[anypath]\")` to access such a local node."
+        "-note": "Nodes stored in this part of the viewer tree will be accessible for all dizmos that are instantiated locally. Use `viewer.privateStorage.getProperty(\"[anypath]\")` to access such a local node."
     }
 },
 "dizmos": {
@@ -1243,10 +1243,10 @@
             }
         },
         "public": {
-            "-note": "Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `dizmo.publicStorage().getProperty(\"[anypath]\")` to access such a node.    This is also where you should provide data for other dizmos that are docked or put onto to yours."
+            "-note": "Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `dizmo.publicStorage.getProperty(\"[anypath]\")` to access such a node.    This is also where you should provide data for other dizmos that are docked or put onto to yours."
         },
         "private": {
-            "-note": "Nodes stored in this part of the dizmo tree will be accessible from the dizmo itself only. Use `dizmo.privateStorage().getProperty(\"[anypath]\")` to access such a node."
+            "-note": "Nodes stored in this part of the dizmo tree will be accessible from the dizmo itself only. Use `dizmo.privateStorage.getProperty(\"[anypath]\")` to access such a node."
         }
     }
 },
@@ -1451,10 +1451,10 @@
             }
         },
         "public": {
-            "-note": "Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `bundle.publicStorage().getProperty(\"[anypath]\")` to access such a node."
+            "-note": "Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `bundle.publicStorage.getProperty(\"[anypath]\")` to access such a node."
         },
         "private": {
-            "-note": "Nodes stored in this part of the dizmo tree will be accessible only from all the dizmos that have been instantiated using the bundle this subtree belongs to. Use `bundle.privateStorage().getProperty(\"[anypath]\")` to access such a node."
+            "-note": "Nodes stored in this part of the dizmo tree will be accessible only from all the dizmos that have been instantiated using the bundle this subtree belongs to. Use `bundle.privateStorage.getProperty(\"[anypath]\")` to access such a node."
         }
     }
 },

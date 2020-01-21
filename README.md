@@ -716,9 +716,9 @@ The name of the setup given to it by its owner  The dizmoID of the person who cr
   * **default**:
   * **subscribable**: True
 ## Public ##
-Nodes stored in this part of the viewer tree will be accessible from the network in *the future*.  Use `viewer.publicStorage().getProperty("[anypath]")` to access such a global node. The URL to access a public node at "/viewer/public/mypath/node" will be something like "http://host.example.com:3418/viewer/public/mypath/node". This will either be made available through AJAX or potentially by providing access functions like getPropertyHttp("10.0.5.22:3418", "/viewer/public/mypath/node");
+Nodes stored in this part of the viewer tree will be accessible from the network in *the future*.  Use `viewer.publicStorage.getProperty("[anypath]")` to access such a global node. The URL to access a public node at "/viewer/public/mypath/node" will be something like "http://host.example.com:3418/viewer/public/mypath/node". This will either be made available through AJAX or potentially by providing access functions like getPropertyHttp("10.0.5.22:3418", "/viewer/public/mypath/node");
 ## Private ##
-Nodes stored in this part of the viewer tree will be accessible for all dizmos that are instantiated locally. Use `viewer.privateStorage().getProperty("[anypath]")` to access such a local node.
+Nodes stored in this part of the viewer tree will be accessible for all dizmos that are instantiated locally. Use `viewer.privateStorage.getProperty("[anypath]")` to access such a local node.
 # Dizmos #
 The subtree of the «/dizmos» node provides access to the data about all the dizmos instantiated in the dizmoViewer currently running. It does so by providing one node for every dizmo using the dizmoID as its name. Each of these dizmo nodes provides three subtrees providing attributes of a dizmo as well as access to its public and private data. Data in the private subtree can only be accessed by the dizmo that hold this node while data in the public subtree can be accessed by any dizmo that has access to that part of the data tree.
 Access to a dizmos information is provided by the following access methods:
@@ -1368,9 +1368,9 @@ Return the merged size of all storage files.
   * **dizmojs_version**
     * 0: 1.4
 ### Public ###
-Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `dizmo.publicStorage().getProperty("[anypath]")` to access such a node.    This is also where you should provide data for other dizmos that are docked or put onto to yours.
+Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `dizmo.publicStorage.getProperty("[anypath]")` to access such a node.    This is also where you should provide data for other dizmos that are docked or put onto to yours.
 ### Private ###
-Nodes stored in this part of the dizmo tree will be accessible from the dizmo itself only. Use `dizmo.privateStorage().getProperty("[anypath]")` to access such a node.
+Nodes stored in this part of the dizmo tree will be accessible from the dizmo itself only. Use `dizmo.privateStorage.getProperty("[anypath]")` to access such a node.
 # Bundles #
 The subtree of the «/bundles» node provides access to the data about all the bundles installed in the dizmoViewer currently running. It does so by providing one node for every bundle using the bundleID as its name.
 
@@ -1616,9 +1616,9 @@ The standard width of the rectangle of the dizmo in pixels
     * 0: 1.3
     * 1: 1.4
 ### Public ###
-Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `bundle.publicStorage().getProperty("[anypath]")` to access such a node.
+Nodes stored in this part of the dizmo tree will be accessible from all other dizmos in the same dizmoViewer. Use `bundle.publicStorage.getProperty("[anypath]")` to access such a node.
 ### Private ###
-Nodes stored in this part of the dizmo tree will be accessible only from all the dizmos that have been instantiated using the bundle this subtree belongs to. Use `bundle.privateStorage().getProperty("[anypath]")` to access such a node.
+Nodes stored in this part of the dizmo tree will be accessible only from all the dizmos that have been instantiated using the bundle this subtree belongs to. Use `bundle.privateStorage.getProperty("[anypath]")` to access such a node.
 # Remotehosts #
 Subtree to get data about available live hosts and connections
 ## [Remotehostid] ##
