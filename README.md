@@ -1,3 +1,8 @@
+# Please check changes by running the schema
+
+    npm-install
+    npm run check
+
 **IMPORTANT:** This MD formatted description of the dizmo data tree description is **not** automatically updated using the JSON version of the data tree specification. So in order to be sure to have the latest and up-to-date version of the description please use the JSON version of this specification. 
 
 # Viewer #

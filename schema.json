@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "#node",
+  "title": "Node",
+  "description": "A node of the viewertree",
+  "type": "object",
+  "properties": {
+    "-note": {
+      "description": "Documentation of the node",
+      "type": "string"
+    },
+    "write": {
+      "description": "Node is writable",
+      "type": "boolean"
+    },
+    "type": {
+      "description": "Type of node",
+      "type": "string",
+      "pattern": "^(boolean|string|\\[string\\]|integer|float)$"
+    },
+    "read": {
+      "type": "boolean"
+    },
+    "subscribable": {
+      "type": "boolean"
+    },
+    "dizmojs_version": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(1.3|1.4)$"
+      }
+    },
+    "range": {
+    },
+    "prev-path": {
+    },
+    "default": {
+    },
+    "example": {
+    }
+  },
+  "patternProperties": {
+    "^(?!-note$|write$|type$|example$|subscribable$|dizmojs_version$|default$|range$|prev-path$|read$)[_a-zA-Z0-9]+$": {
+      "$ref": "#node"
+    },
+    "^(?!-note$|write$|type$|example$|subscribable$|dizmojs_version$|default$|range$|prev-path$|read$)\\[[_a-zA-Z0-9]+\\]$": {
+      "$ref": "#node"
+    },
+    "^(?!-note$|write$|type$|example$|subscribable$|dizmojs_version$|default$|range$|prev-path$|read$)-[_a-zA-Z0-9]+$": {
+      "$ref": "#node"
+    },
+    "^(?!-note$|write$|type$|example$|subscribable$|dizmojs_version$|default$|range$|prev-path$|read$)-\\[[_a-zA-Z0-9]+\\]$": {
+      "$ref": "#node"
+    }
+  },
+  "additionalProperties": false
+}

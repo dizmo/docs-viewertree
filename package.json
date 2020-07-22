@@ -1,0 +1,15 @@
+{
+  "name": "viewertree-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "check-schema.js",
+  "author": "",
+  "license": "proprietary",
+  "scripts": {
+    "check": "node check-schema.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "jsonschema": "^1.2.6"
+  }
+}
