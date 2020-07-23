@@ -16,7 +16,7 @@
     "type": {
       "description": "Type of node",
       "type": "string",
-      "pattern": "^(boolean|string|\\[string\\]|integer|float)$"
+      "pattern": "^(boolean|string|\\[string\\]|integer|float|dizmoID|bundleID|\\[dizmoID\\]|\\[bundleID\\])$"
     },
     "read": {
       "type": "boolean"

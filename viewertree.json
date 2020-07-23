@@ -57,7 +57,7 @@
       "childDizmos": {
         "-note": "An array of dizmoIDs of all dizmos located on the viewer surface directly",
         "write": false,
-        "type": "[string]",
+        "type": "[dizmoID]",
         "range": "hexstring",
         "example": ["h3753bff70b74d672524fa570f2fa2567", "hd4413a56a4c5c72f4ad24528757f9850"],
         "prev-path": "/dizmos",
@@ -367,7 +367,7 @@
             "bundleIDs": {
               "-note": "This is an unordered array of bundleIds of dizmos that can handle a specific MIME type. This list is maintained by dizmoViewer based on Information coming from dizmos Info.plists.",
               "write": false,
-              "type": "[string]",
+              "type": "[bundleID]",
               "subscribable": true,
               "dizmojs_version": ["1.3", "1.4"]
             }
@@ -702,7 +702,7 @@
         "bundleId": {
           "-note": "The bundleID of the bundle used to create this dizmo instance. This can be used to access more information about this dizmo by accessing `bundle.getAttributes(\"version\");`",
           "write": false,
-          "type": "string",
+          "type": "bundleID",
           "example": "com.dizmo.example",
           "subscribable": false,
           "dizmojs_version": ["1.3", "1.4"]
@@ -710,7 +710,7 @@
         "childDizmos": {
           "-note": "An array of dizmoIDs of all dizmos located on this dizmo directly",
           "write": false,
-          "type": "[string]",
+          "type": "[dizmoID]",
           "range": "hexstring",
           "example": ["h3753bff70b74d672524fa570f2fa2567", "hd4413a56a4c5c72f4ad24528757f9850"],
           "subscribable": true,
@@ -746,7 +746,7 @@
         "dockedDizmos": {
           "-note": "An array of dizmoIDs of all dizmos docked to this dizmo directly",
           "write": false,
-          "type": "[string]",
+          "type": "[dizmoID]",
           "range": "hexstring",
           "example": ["h96753bff70b74d672524fa570f2fa25ca3", "h21413a56a4c5c72f4ad24528757f989a"],
           "subscribable": true,
@@ -755,7 +755,7 @@
           "[dizmoID]": {
             "-note": "A value identifying the current docking stage",
             "write": true,
-            "type": "[string]",
+            "type": "string",
             "range": "preparing, docked, (finished)",
             "example": "preparing",
             "subscribable": true,
@@ -906,7 +906,7 @@
           "example": "h2753bff704c4d672524fa570f2fa28af",
           "subscribable": true,
           "default": "",
-          "type": "string",
+          "type": "dizmoID",
           "dizmojs_version": ["1.3", "1.4"]
         },
         "settings": {
@@ -1304,7 +1304,7 @@
         "dizmoInstances": {
           "-note": "An array of the dizmoIDs of all dizmos instantiated based on this bundle",
           "write": false,
-          "type": "[string]",
+          "type": "[dizmoID]",
           "example": ["h8bc3bff70b74d672524fa570f2fa2599", "h52413a56a4c5c72f4ad24528757f99b2"],
           "subscribable": true,
           "dizmojs_version": ["1.3", "1.4"]
@@ -1328,7 +1328,7 @@
         "embeddedBundles": {
           "-note": "A list of bundle IDs that are embedded in this bundle too. These bundles are read from Info.plist and will be deinstalled too, if the bundle itself is deinstalled. Only embedded bundles with same domain will be deinstalled so make sure embedded bundles share the same domain in  the bundleID.",
           "write": false,
-          "type": "[string]",
+          "type": "[bundleID]",
           "example": ["com.example.embedded1", "com.example.embedded2", "com.example.embedded3"],
           "subscribable": true,
           "dizmojs_version": ["1.3", "1.4"]
