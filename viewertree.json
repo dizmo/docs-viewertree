@@ -542,6 +542,14 @@
           "example": 8589934592,
           "subscribable": false,
           "dizmojs_version": ["1.3", "1.4"]
+        },
+        "workspaceUrl": {
+          "-note": "The URL of the workspace shown in dizmoWeb. Empty in dizmoDesk and dizmoNet",
+          "write": false,
+          "type": "string",
+          "example": "https://web.dizmo.com/dizmoweb/index.html?session=ce61f73a52b8b2b3f4a942565b475a1",
+          "subscribable": false,
+          "dizmojs_version": ["1.4"]
         }
       },
       "-liveConnections": {
