@@ -965,7 +965,7 @@
             "write": true,
             "type": "string",
             "range": "URL",
-            "default": "bundle://assets/Icon-dark.svg",
+            "default": "bundle://Icon-dark.svg",
             "subscribable": true,
             "dizmojs_version": ["1.3", "1.4", "2.0"]
           },
@@ -974,7 +974,7 @@
             "write": true,
             "type": "string",
             "range": "URL",
-            "default": "bundle://assets/Icon.svg",
+            "default": "bundle://Icon.svg",
             "subscribable": true,
             "dizmojs_version": ["1.3", "1.4", "2.0"]
           },
