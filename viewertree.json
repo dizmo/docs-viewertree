@@ -824,7 +824,7 @@
             "type": "integer",
             "range": "50..4000",
             "subscribable": true,
-            "dizmojs_version": ["1.3", "1.4", "2.0"]
+            "dizmojs_version": ["1.3", "1.4"]
           },
           "maxHeight": {
             "-note": "The maximum height of the dizmo content in pixels. The user using the resize handle, cannot make the dizmo larger in height than this value",
@@ -864,7 +864,7 @@
             "type": "integer",
             "range": "65..4000",
             "subscribable": true,
-            "dizmojs_version": ["1.3", "1.4", "2.0"]
+            "dizmojs_version": ["1.3", "1.4"]
           },
           "x": {
             "-note": "The x coordinate of the top left of the rectangle of the dizmo relative to the parent dizmo. The range is only checked if the dizmo does not have a parent. In general it is recommended to use dizmo.setPostion(x, y) instead of manipulating this attribute directly.    <a href=\"http://test.dizmo.com/docs/topics/position\">Details</a>",
