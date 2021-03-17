@@ -756,7 +756,7 @@
           "write": false,
           "type": "string",
           "subscribable": false,
-          "dizmojs_version": ["2.0"]
+          "dizmojs_version": ["1.4", "2.0"]
         },
         "dockedDizmos": {
           "-note": "An array of dizmoIDs of all dizmos docked to this dizmo directly",
