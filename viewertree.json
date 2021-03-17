@@ -751,6 +751,13 @@
           "subscribable": false,
           "dizmojs_version": ["1.3", "1.4"]
         },
+        "createdBy": {
+          "-note": "The username provided by dizmoViewer at the time a new dizmo is created",
+          "write": false,
+          "type": "string",
+          "subscribable": false,
+          "dizmojs_version": ["2.0"]
+        },
         "dockedDizmos": {
           "-note": "An array of dizmoIDs of all dizmos docked to this dizmo directly",
           "write": false,
