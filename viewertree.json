@@ -1185,6 +1185,13 @@
             "subscribable": true,
             "dizmojs_version": ["1.3", "1.4", "2.0"]
           },
+          "resizing": {
+            "-note": "Provide a function which will be called when the dizmo is being resized.",
+            "write": false,
+            "type": "boolean",
+            "subscribable": true,
+            "dizmojs_version": ["1.3", "1.4", "2.0"]
+          },
           "sticky": {
             "-note": "If this flag is set to true the dizmo will be made «sticky», i.e. make it hover over the other dizmos.",
             "write": true,
