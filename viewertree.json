@@ -778,6 +778,24 @@
             "dizmojs_version": ["1.3", "1.4"]
           }
         },
+        "events": {
+          "droptarget": {
+            "-note": "Target dizmo of a drag operation. When a dizmo is released (with the mouse) this will notify with the dizmoId which is directly below the upper left corner.",
+            "read": false,
+            "write": false,
+            "subscribable": false,
+            "type": "dizmoID",
+            "dizmojs_version": ["1.4", "2.0"]
+          },
+          "dropsource": {
+            "-note": "Opposite of droptarget. This will event will be triggered in the target dizmo and contain the dizmoid of the dizmo being moved.",
+            "read": false,
+            "write": false,
+            "subscribable": false,
+            "type": "dizmoID",
+            "dizmojs_version": ["1.4", "2.0"]
+          }
+        },
         "geometry": {
           "-note": "This subtree of the «/dizmos/[dizmoID]/attributes» node provides information about geometry of the dizmo.  These values are based on the coordinate system that is given by the parent dizmo. Access these items using `dizmo.getAttribute(\"geometry/[info]\");`",
           "front": {
